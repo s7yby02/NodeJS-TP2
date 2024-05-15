@@ -1,7 +1,18 @@
+// function start() { 
+//     console.log("Request handler 'start' was called."); 
+//     return "Hello start"; 
+//   } 
 function start() { 
-    console.log("Request handler 'start' was called."); 
-    return "Hello start"; 
+  console.log("Request handler 'start' was called."); 
+ 
+  function sleep(milliSeconds) { 
+    var startTime = new Date().getTime(); 
+    while (new Date().getTime() < startTime + milliSeconds); 
   } 
+ 
+  sleep(60000); 
+  return "Hello Start"; 
+}
    
   function upload() { 
     console.log("Request handler 'upload' was called."); 
@@ -29,8 +40,9 @@ function start() {
   } 
    
   exports.start = start; 
-       exports.upload = upload; 
+  exports.upload = upload; 
   exports.find = find; 
   exports.show = show; 
   exports.login = login; 
   exports.logout = logout;
+  
